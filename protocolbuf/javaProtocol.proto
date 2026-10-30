@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package protocolbuf; 
+
+option java_multiple_files = true;
+option java_package = "edu.pep.ifsp.Analisador";
+
+service ServicoValidado {
+    rpc Validar(RequestDoc) returns (ReplyDoc) {}
+}
+
+message RequestDoc {
+    string nome = 1; 
+    string doc = 2; 
+    int32 tipo = 3; 
+}
+
+message ReplyDoc{
+    string nome = 1; 
+    int32 tipo_erro = 2; 
+    string mensagem = 3; 
+}
+
+
+
+

@@ -1,0 +1,23 @@
+edition = '2024'; 
+
+package protocolbuf; 
+
+service ServicoValidado {
+    rpc Validar(RequestDoc) returns (ReplyDoc) {}
+}
+
+message RequestDoc {
+    string nome = 1; 
+    string doc = 2; 
+    int32 tipo = 3; 
+}
+
+message ReplyDoc{
+    string nome = 1; 
+    int32 tipo_erro = 2; 
+    string mensagem = 3; 
+}
+
+
+
+
