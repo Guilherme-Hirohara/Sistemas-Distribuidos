@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package analisadordocumento; 
+
+service AnalisadorDocumento{
+    
+    rpc analisandoDocumento(RequisicaoDocumento) returns (RespostaProtocolo) {} 
+    
+}
+
+message RequisicaoDocumento{
+    string documento = 1; 
+    int32 tipoDocumento = 2; 
+}
+
+message RespostaProtocolo{
+    int32 tipoResposta = 1; 
+    string mensagem = 2; 
+}
